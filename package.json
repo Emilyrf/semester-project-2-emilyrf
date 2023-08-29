@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2-emilyrf",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Semester project 2",
   "scripts": {
     "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
