@@ -1,34 +1,34 @@
-import * as listeners from "./handlers/index.js";
+import * as listeners from './handlers/index.js';
 
 const path = location.pathname;
 
 switch (path) {
-  case "/":
-    console.log("home");
+  case '/':
+    console.log('home');
     break;
-  case "/profile/login/":
+  case '/profile/login/':
     listeners.setLoginFormListener();
     break;
-  case "/profile/register/":
+  case '/profile/register/':
     listeners.setRegisterFormListener();
     break;
-  case "/post/edit/":
+  case '/post/edit/':
     listeners.setUpdatePostFormListener();
     break;
-  case "/posts/":
+  case '/posts/':
     listeners.setCreatePostFormListener();
     listeners.getPosts();
     listeners.filterListener();
     listeners.searchListener();
     break;
-  case "/post/":
+  case '/post/':
     listeners.getPostById();
     listeners.setCreateCommentFormListener();
     break;
-  case "/profile/edit/":
+  case '/profile/edit/':
     listeners.setUpdateProfileFormListener();
     break;
-  case "/profile/":
+  case '/profile/':
     listeners.displayProfileListener();
     break;
 }
