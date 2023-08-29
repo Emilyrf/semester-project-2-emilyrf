@@ -6,7 +6,8 @@
     "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
     "format": "prettier -w src/**/*.js",
     "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server"
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "lint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
