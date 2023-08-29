@@ -33,4 +33,4 @@ switch (path) {
   //   break;
 }
 
-// listeners.logoutListener();
+listeners.logoutListener();
