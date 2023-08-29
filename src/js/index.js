@@ -34,5 +34,3 @@ switch (path) {
 }
 
 listeners.logoutListener();
-
-console.log('Intentional Error');
