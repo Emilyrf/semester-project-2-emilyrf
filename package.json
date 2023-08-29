@@ -1,0 +1,32 @@
+{
+  "name": "semester-project-2-emilyrf",
+  "version": "0.0.1",
+  "description": "Semester project 2",
+  "scripts": {
+    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "CSS",
+    "CSS",
+    "Frameworks",
+    "Bootstrap",
+    "SCSS",
+    "SASS"
+  ],
+  "author": "Emily Rego Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.60.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "main": "index.js"
+}
