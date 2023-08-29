@@ -8,7 +8,8 @@
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.48.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "live-server": "^1.2.2",
     "prettier": "^3.0.3",
     "sass": "^1.60.0"
@@ -33,5 +36,11 @@
   "dependencies": {
     "bootstrap": "^5.2.3"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  }
 }
