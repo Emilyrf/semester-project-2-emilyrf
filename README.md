@@ -9,5 +9,5 @@ Semester Project 2
 | Design Prototype |         |
 | Style Guide      | |
 | Kanban Board     |      https://github.com/users/Emilyrf/projects/1/views/1                                         |
-| Repository       |                                                            |
+| Repository       |https://github.com/Emilyrf/semester-project-2-emilyrf                                             |
 | Hosted Demo      |                                                                        |
