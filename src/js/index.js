@@ -5,6 +5,7 @@ const path = location.pathname;
 switch (path) {
   case '/':
     console.log('home');
+    listeners.displayListings();
     break;
   case '/profile/login/':
     listeners.setLoginFormListener();
@@ -21,16 +22,16 @@ switch (path) {
   //   listeners.filterListener();
   //   listeners.searchListener();
   //   break;
-  // case '/post/':
-  //   listeners.getPostById();
-  //   listeners.setCreateCommentFormListener();
-  //   break;
-  // case '/profile/edit/':
-  //   listeners.setUpdateProfileFormListener();
-  //   break;
-  // case '/profile/':
-  //   listeners.displayProfileListener();
-  //   break;
+  case '/listing/':
+    listeners.getListingtById();
+    //   listeners.setCreateCommentFormListener();
+    //   break;
+    // case '/profile/edit/':
+    //   listeners.setUpdateProfileFormListener();
+    break;
+  case '/profile/':
+    listeners.displayProfileListener();
+    break;
 }
 
 listeners.logoutListener();
