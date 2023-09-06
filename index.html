@@ -21,6 +21,17 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">Bid Bud</a>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            id="search"
+            list="searchResults"
+          />
+          <div id="searchResults" class="search-results"></div>
+        </form>
         <button
           class="navbar-toggler"
           type="button"
@@ -170,44 +181,11 @@
               </button>
             </div>
           </div>
-          <div class="col" style="min-width: 250px">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="text"
-                placeholder="Search..."
-                aria-label="Search"
-                id="search-input"
-              />
-              <button
-                class="btn btn-outline-primary"
-                type="button"
-                id="search-clear-button"
-              >
-                Clear
-              </button>
-            </form>
-          </div>
+          <div class="col" style="min-width: 250px"></div>
         </div>
 
         <!-- listings cards -->
-        <div id="listingsContainer">
-          <article class="card card-width p-0 m-4 col-12 col-md-4">
-            <img
-              class="card-img-top card-position-image"
-              src="src/img/receita-abacate.jpg"
-              alt="tigela com salada de abacate, vista superior"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Tigela de abacate</h5>
-              <p class="card-text">
-                Receita refrescante e cheia de vitaminas para o seu café da
-                manhã!and make up the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Veja a Receita</a>
-            </div>
-          </article>
-        </div>
+        <div id="listingsContainer"></div>
       </section>
     </main>
 
