@@ -1,5 +1,7 @@
 import { API_AUCTION_URL } from '../constants.js';
+import { getName } from '../../helpers/storage.js';
 import displayMessage from '../../ui/components/displayMessage.js';
+import { authFetch } from '../authFetch.js';
 
 const action = '/listings';
 const method = 'get';
@@ -24,7 +26,6 @@ export async function getListings() {
   }
 }
 
-//GET LISTING BY ID
 export async function getListing(id) {
   try {
     if (!id) {
@@ -47,4 +48,13 @@ export async function getListing(id) {
   } catch (error) {
     displayMessage('danger', error, '#message');
   }
+}
+
+export async function getMyListings() {
+  const username = getName();
+  const endpoint = `/profiles/${username}`;
+  const userPostsUrl = `${API_AUCTION_URL}${endpoint}${action}`;
+
+  const response = await authFetch(userPostsUrl);
+  return await response.json();
 }

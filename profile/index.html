@@ -68,20 +68,36 @@
                 style="width: 200px"
               />
 
+              <div>
+                <a class="btn btn-warning" href="/profile/edit" role="button"
+                  >Update avatar</a
+                >
+              </div>
+
               <h1 class="heading-1 text-center profile-name"></h1>
 
               <p class="text-center profile-email">Email:</p>
               <p class="text-center profile-credits">Credits:</p>
             </div>
-            <a class="btn btn-warning" href="/profile/edit" role="button"
-              >Edit profile</a
-            >
           </div>
+        </div>
+      </section>
+
+      <section class="container-fluid bg-light p-3" id="listings">
+        <a
+          class="btn btn-small btn-primary text-white px-5 py-2"
+          href="/item-add"
+          ><strong>Add new item</strong></a
+        >
+        <hr />
+        <h2>My listings</h2>
+        <div id="listingsContainer">
+          <h3 class="text-center">You haven't listed anything yet.</h3>
         </div>
       </section>
     </main>
 
-    <footer class="bg-dark p-3 fixed-bottom">
+    <footer class="bg-dark p-3 mt-5">
       <p class="text-light m-0 text-center">©Emily R. Ferreira</p>
     </footer>
     <script
