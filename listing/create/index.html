@@ -98,40 +98,58 @@
                   />
                 </div>
                 <!-- Media -->
+
+                <!-- Media inputs -->
                 <div class="mb-3">
-                  <label for="media" class="form-label">Media</label>
+                  <label for="media1" class="form-label">Media URL 1</label>
                   <input
-                    name="media"
                     type="url"
+                    id="media1"
+                    name="media[]"
                     class="form-control border border-primary"
+                    placeholder="Enter image URL 1"
+                    required
                   />
                 </div>
-                <div class="mb-0">
-                  <p>Ends at</p>
-                  <div class="row">
-                    <div class="col">
-                      <input
-                        type="date"
-                        name="date"
-                        id="date"
-                        class="form-control"
-                        title="Bid deadline"
-                        required
-                      />
-                      <label for="date" style="visibility: hidden">Date</label>
-                    </div>
-                    <div class="col">
-                      <input
-                        type="time"
-                        name="time"
-                        id="time"
-                        class="form-control"
-                        title="Time"
-                        required
-                      />
-                      <label for="time" style="visibility: hidden">Time</label>
-                    </div>
-                  </div>
+
+                <div class="mb-3">
+                  <label for="media2" class="form-label">Media URL 2</label>
+                  <input
+                    type="url"
+                    id="media2"
+                    name="media[]"
+                    class="form-control border border-primary"
+                    placeholder="Enter image URL 2"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="media3" class="form-label">Media URL 3</label>
+                  <input
+                    type="url"
+                    id="media3"
+                    name="media[]"
+                    class="form-control border border-primary"
+                    placeholder="Enter image URL 3"
+                    required
+                  />
+                </div>
+
+                <!-- <div class="mb-3">
+                <label for="media" class="form-label">Media</label>
+                <input name="media" type="url" class="form-control border border-primary" />
+              </div> -->
+
+                <div class="mb-3">
+                  <label for="endsAt" class="form-label">Ends At</label>
+                  <input
+                    type="date"
+                    id="endsAt"
+                    name="endsAt"
+                    class="form-control border border-primary"
+                    required
+                  />
                 </div>
 
                 <div class="d-grid">
