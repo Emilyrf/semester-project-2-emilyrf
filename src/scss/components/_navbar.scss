@@ -1,13 +1,7 @@
 .navbar {
-  background-color: $light-color;
-  .navbar-brand {
-    color: $primary-color;
-    font-size: 2rem;
-    font-family: $font-title;
-  }
   .nav-link.active {
-    color: $primary-color !important;
-   text-decoration: underline;
+    color: $primary-color;
+    text-decoration: underline;
   }
   .nav-link:hover,
   .navbar-toggler {

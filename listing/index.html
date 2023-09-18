@@ -16,7 +16,7 @@
     />
   </head>
 
-  <body class="bg-color">
+  <body>
     <header>
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
@@ -55,25 +55,54 @@
     </header>
 
     <main>
-      <section class="container card m-3 p-3" id="singleListing">
-        <img
-          src=""
-          alt="Listing Image"
-          class="single-listing"
-          id="listingImage"
-        />
-        <h1 class="heading-1 text-center p-3" id="listingTitle">My Post:</h1>
-        <div id="listingDescription"></div>
+      <section class="container" id="singleListing">
+        <div class="card mb-3" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="..."
+                id="listingImage"
+                alt="Listing Image"
+                class="single-listing img-fluid rounded-start"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h1 class="card-title heading-1" id="listingTitle">
+                  Card title
+                </h1>
+                <p class="card-text" class="card-text" id="listingOwner">
+                  <strong>Listed by:</strong>
+                </p>
+                <p class="card-text" id="listingDescription"></p>
+                <hr />
+                <p class="card-text" id="winningBid">
+                  <strong>Highest bid: </strong>
+                </p>
+                <p class="card-text" id="endsAt"><strong>Ends at: </strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="card mb-3 text-center" style="max-width: 540px">
+          <h3>Bidding history:</h3>
+          <div id="biddingHistoryContainer">
+            <div class="row">
+              <p class="col">noname</p>
+              <p class="col">Amount: 25</p>
+            </div>
+            <div class="row">
+              <p class="col">testname</p>
+              <p class="col">Amount: 26</p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="container card m-3 p-3" id="getComments">
-        <!--Comments here -->
-        <h3>Comments:</h3>
-      </section>
-
-      <section class="container card m-3 p-3">
-        <!--New comment-->
-        <h2>Leave a comment:</h2>
+      <section class="container card">
+        <h2>Your bid:</h2>
         <form
           class="write-post-wrapper d-flex flex-column"
           id="createCommentForm"

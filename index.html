@@ -19,8 +19,10 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">Bid Bud</a>
+      <nav class="navbar navbar-expand-lg bg-light fixed-top p-2 text-center">
+        <a class="navbar-brand" href="/">
+          <img height="50" src="images/logob.png" alt="BidBud logo" />
+        </a>
         <form class="d-flex" role="search">
           <input
             class="form-control me-2"
@@ -69,8 +71,8 @@
       </nav>
     </header>
 
-    <main>
-      <section class="carousel">
+    <main class="mt-5">
+      <!-- <section class="carousel">
         <div
           id="carouselExampleIndicators"
           class="carousel slide"
@@ -137,16 +139,18 @@
             </a>
           </div>
         </div>
-      </section>
+      </section> -->
 
-      <section id="title">
+      <section id="title" class="p-2">
         <h1 class="font-title text-center heading-1 pt-5">
           The best deals are waiting for you
         </h1>
-        <p class="text-center text-secondary pb-5">
-          Join Bid Bud and get 1000 credits.
+        <p class="text-center text-secondary pb-2">
+          Find the items you always dreamed of. Buy and sell in the confort of
+          your home.
         </p>
         <div class="text-center">
+          <h4 class="pb-1">Join Bid Bud and get 1000 credits!</h4>
           <a
             class="text-decoration-none text-light btn btn-primary"
             href="/profile/register/"
@@ -158,7 +162,6 @@
 
       <section class="container-fluid bg-light" id="listings">
         <hr />
-        <!-- filters and search bar -->
         <div class="row mb-4">
           <div class="col">
             <h2>Active listings</h2>
@@ -167,21 +170,33 @@
             <div class="btn-group" role="group" aria-label="Basic example">
               <button
                 type="button"
-                class="btn btn-info active"
+                class="btn btn-secondary active"
                 id="newest-first-button"
               >
                 Newest first
               </button>
               <button
                 type="button"
-                class="btn btn-info"
+                class="btn btn-secondary"
                 id="oldest-first-button"
               >
                 Oldest first
               </button>
             </div>
           </div>
-          <div class="col" style="min-width: 250px"></div>
+          <div class="col" style="min-width: 250px">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="search"
+                list="searchResults"
+              />
+              <div id="searchResults" class="search-results"></div>
+            </form>
+          </div>
         </div>
 
         <!-- listings cards -->
