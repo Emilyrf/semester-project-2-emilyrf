@@ -18,12 +18,13 @@ export async function displayListings() {
         'col-12',
         'col-md-4',
       );
-      listItem.innerHTML = ` <img class="card-img-top card-position-image" src="${item.media[0]}" alt="${item.title}"> 
-                 <div class="card-body">
-                 <h5 class="card-title">${item.title}</h5>
-                 <p class="card-text">${item.description}</p>
-                 <a href="/listing/?id=${item.id}"class="btn btn-primary">Bid Now</a>
-                 </div>`;
+      listItem.innerHTML = `
+      <img class="card-img-top card-position-image" src="${item.media[0]}" alt="${item.title}" onerror="this.src='/images/product.jpg'">
+      <div class="card-body">
+        <h5 class="card-title">${item.title}</h5>
+        <p class="card-text">${item.description}</p>
+        <a href="/listing/?id=${item.id}" class="btn btn-primary">Bid Now</a>
+      </div>`;
       dataList.appendChild(listItem);
     });
 
@@ -31,6 +32,15 @@ export async function displayListings() {
     dataContainer.appendChild(dataList);
   } catch (error) {
     console.error('Error:', error);
+  }
+}
+
+function isValidURL(string) {
+  try {
+    new URL(string);
+    return true;
+  } catch (error) {
+    return false;
   }
 }
 
@@ -42,14 +52,22 @@ export async function getListingtById() {
 
     const listing = await listingMethods.getListing(id);
 
+    document.title = listing.title;
+
     const listingImage = document.querySelector('#listingImage');
     const listingTitle = document.querySelector('#listingTitle');
+    const listingOwner = document.querySelector('#listingOwner');
     const listingDescription = document.querySelector('#listingDescription');
+    const endsAt = document.querySelector('#endsAt');
+    const imageSrc = isValidURL(listing.media[0])
+      ? listing.media[0]
+      : '/images/product.jpg';
 
-    document.title = listing.title;
-    listingImage.src = listing.media[0] ?? `/images/placeholder.png`;
+    listingImage.src = imageSrc;
     listingTitle.innerHTML = listing.title;
+    listingOwner.innerHTML += listing.seller.name;
     listingDescription.innerHTML = listing.description;
+    endsAt.innerHTML += listing.endsAt;
   } catch (error) {
     displayMessage('danger', error, '#message');
   }
@@ -71,12 +89,13 @@ export async function displayMyListings() {
         'col-12',
         'col-md-4',
       );
-      listItem.innerHTML = ` <img class="card-img-top card-position-image" src="${item.media[0]}" alt="${item.title}"> 
-                   <div class="card-body">
-                   <h5 class="card-title">${item.title}</h5>
-                   <p class="card-text">${item.description}</p>
-                   <a href="/listing/?id=${item.id}"class="btn btn-primary">Bid Now</a>
-                   </div>`;
+      listItem.innerHTML = `
+      <img class="card-img-top card-position-image" src="${item.media[0]}" alt="${item.title}" onerror="this.src='/images/product.jpg'">
+      <div class="card-body">
+        <h5 class="card-title">${item.title}</h5>
+        <p class="card-text">${item.description}</p>
+        <a href="/listing/?id=${item.id}" class="btn btn-primary">Bid Now</a>
+      </div>`;
       dataList.appendChild(listItem);
     });
 
