@@ -1,5 +1,6 @@
 import * as listingMethods from '../../api/listings/index.js';
 import displayMessage from '../../ui/components/displayMessage.js';
+import displayBids from '../../ui/components/bidsTemplate.js';
 
 export async function displayListings() {
   try {
@@ -67,7 +68,12 @@ export async function getListingtById() {
     listingTitle.innerHTML = listing.title;
     listingOwner.innerHTML += listing.seller.name;
     listingDescription.innerHTML = listing.description;
-    endsAt.innerHTML += listing.endsAt;
+    endsAt.innerHTML += new Date(listing.endsAt).toLocaleString();
+
+    // Display bids
+    displayBids(listing.bids);
+
+    console.log(listing);
   } catch (error) {
     displayMessage('danger', error, '#message');
   }
