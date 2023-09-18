@@ -15,14 +15,7 @@
     "type": "git",
     "url": ""
   },
-  "keywords": [
-    "CSS",
-    "CSS",
-    "Frameworks",
-    "Bootstrap",
-    "SCSS",
-    "SASS"
-  ],
+  
   "author": "Emily Rego Ferreira",
   "license": "ISC",
   "devDependencies": {
