@@ -24,6 +24,7 @@ export async function displayListings() {
       <div class="card-body">
         <h5 class="card-title">${item.title}</h5>
         <p class="card-text">${item.description}</p>
+        <p>Bids: ${item._count.bids}</p>
         <a href="/listing/?id=${item.id}" class="btn btn-primary">Bid Now</a>
       </div>`;
       dataList.appendChild(listItem);
