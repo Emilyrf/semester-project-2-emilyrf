@@ -1,6 +1,7 @@
 import { createListing } from '../../api/listings/index.js';
 import displayMessage from '../../ui/components/displayMessage.js';
 
+//Create listing
 export function setCreateListingFormListener() {
   const form = document.getElementById('createListingForm');
 
@@ -11,13 +12,11 @@ export function setCreateListingFormListener() {
       const formData = new FormData(form);
       const listing = Object.fromEntries(formData.entries());
 
-      // Split tags into an array
       listing.tags = listing.tags.split(',');
 
       // Format endsAt to ISO date string
       listing.endsAt = new Date(listing.endsAt).toISOString();
 
-      // Collect media as an array
       const mediaArray = Array.from(formData.getAll('media[]'));
       listing.media = mediaArray;
 
