@@ -1,5 +1,5 @@
 import { getProfile } from '../../api/profile/index.js';
-import { load } from '../../storage/index.js';
+import { load } from '../../helpers/storage.js';
 
 export async function displayProfileListener() {
   const profile = await getProfile();
