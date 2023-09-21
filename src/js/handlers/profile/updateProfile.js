@@ -1,5 +1,5 @@
 import { getProfile, updateProfile } from '../../api/profile/index.js';
-import { load } from '../../storage/index.js';
+import { load } from '../../helpers/storage.js';
 import displayMessage from '../../ui/components/displayMessage.js';
 
 export async function setUpdateProfileFormListener() {
