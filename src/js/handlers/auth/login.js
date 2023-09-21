@@ -1,6 +1,6 @@
 import { login } from '../../api/auth/login.js';
 import displayMessage from '../../ui/components/displayMessage.js';
-import * as storage from '../../storage/index.js';
+import * as storage from '../../helpers/storage.js';
 
 export function setLoginFormListener() {
   const loginForm = document.querySelector('#loginForm');
@@ -18,7 +18,7 @@ export function setLoginFormListener() {
 
         storage.save('token', accessToken);
         storage.save('profile', userInfo);
-        window.location.href = '/profile';
+        window.location.href = '/index.html';
       } catch (error) {
         displayMessage('danger', error, '#message');
       }
