@@ -1,18 +1,21 @@
-import * as listeners from './handlers/index.js';
 import hideSearchOnDocumentClick from './handlers/listings/hideSearchOnDocumentClick.js';
 import searchListings from './handlers/listings/searchListing.js';
 import { createMenu } from './ui/common/createMenu.js';
+import { redirectBasedOnLogin } from './helpers/redirectBasedOnLogin.js';
+import * as listeners from './handlers/index.js';
+import { isLoggedIn, displayUserName } from './helpers/auth.js';
 
 function router() {
   const path = location.pathname;
   createMenu(path);
+  redirectBasedOnLogin(path);
 
   switch (path) {
     case '/':
     case '/index.html':
-      if (listeners.isLoggedIn()) {
+      if (isLoggedIn()) {
         document.querySelector('#hero').style.display = 'none';
-        listeners.displayUserName();
+        displayUserName();
       } else {
         document.querySelector('#welcomeUser').style.display = 'none';
       }
@@ -36,7 +39,7 @@ function router() {
       listeners.displayMyListings();
       break;
     case '/listing/':
-      if (!listeners.isLoggedIn()) {
+      if (!isLoggedIn()) {
         location.href = '/profile/login/';
         return false;
       }
@@ -44,7 +47,6 @@ function router() {
       listeners.setCreateBidListener();
       break;
     case '/listing/create/':
-      console.log('new listing');
       listeners.setCreateListingFormListener();
   }
 }

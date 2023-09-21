@@ -7,5 +7,4 @@ export function isLoggedIn() {
 export function displayUserName() {
   const loggedUserName = document.querySelector('#loggedUserName');
   loggedUserName.innerHTML = getName();
-  console.log('pegou get');
 }

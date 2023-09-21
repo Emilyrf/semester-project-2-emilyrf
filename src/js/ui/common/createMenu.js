@@ -2,10 +2,8 @@ import { isLoggedIn } from '../../helpers/auth.js';
 import * as listeners from '../../handlers/index.js';
 
 export function createMenu(path) {
-  console.log('chamou');
   const menu = document.querySelector('#menu');
   if (isLoggedIn()) {
-    console.log('logado');
     menu.innerHTML = `<li class="nav-item">
                              <a class="nav-link ${
                                path === '/' ? 'active' : ''
@@ -30,7 +28,6 @@ export function createMenu(path) {
                         `;
     listeners.logoutListener();
   } else {
-    console.log('deslogado');
     menu.innerHTML = `<li>
                              <a class="nav-link ${
                                path === '/' ? 'active' : ''

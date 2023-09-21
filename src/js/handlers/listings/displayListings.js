@@ -74,8 +74,6 @@ export async function getListingtById() {
 
     // Display bids
     displayBids(listing.bids);
-
-    console.log(listing);
   } catch (error) {
     displayMessage('danger', error, '#message');
   }
