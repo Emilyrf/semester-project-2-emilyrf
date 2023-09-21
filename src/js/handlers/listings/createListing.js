@@ -32,9 +32,8 @@ export function setCreateListingFormListener() {
       }
 
       try {
-        console.log('Creating listing...');
         await createListing(listing);
-        console.log('Listing created successfully.');
+
         displayMessage('success', 'Your item was listed', '#message');
       } catch (error) {
         displayMessage('danger', error, '#message');

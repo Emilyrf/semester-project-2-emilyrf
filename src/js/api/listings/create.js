@@ -1,6 +1,5 @@
 import { API_AUCTION_URL } from '../constants.js';
 import { authFetch } from '../authFetch.js';
-import displayMessage from '../../ui/components/displayMessage.js';
 
 const action = '/listings';
 const method = 'post';
@@ -27,28 +26,23 @@ export async function createListing(listingData) {
 
   const createListingUrl = API_AUCTION_URL + action;
 
-  try {
-    const response = await authFetch(createListingUrl, {
-      method,
-      body: JSON.stringify(listingData),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  const response = await authFetch(createListingUrl, {
+    method,
+    body: JSON.stringify(listingData),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    if (response.ok) {
-      const listing = await response.json();
-      console.log('Listing created:', listing);
-    } else {
-      const errorResponse = await response.json();
-      throw new Error(errorResponse.errors[0].message);
-    }
-  } catch (error) {
-    displayMessage('danger', error, '#message');
+  if (response.ok) {
+    return await response.json();
+  } else {
+    const errorResponse = await response.json();
+    throw new Error(errorResponse.errors[0].message);
   }
 }
 
-//Function to create a new listing
+//Function to create a bid
 export async function createBid(bid) {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);

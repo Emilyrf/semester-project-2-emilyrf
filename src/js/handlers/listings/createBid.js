@@ -13,10 +13,8 @@ export function setCreateBidListener() {
       bid.amount = parseInt(bid.amount);
 
       try {
-        // Removed the 'const response =' part
         await createBid(bid);
 
-        // Check if the request was successful
         displayMessage(
           'success',
           'Your bid was received! Click to refresh.',
