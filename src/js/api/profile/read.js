@@ -4,8 +4,6 @@ import { getName } from '../../helpers/storage.js';
 
 const action = '/profiles';
 
-// const profile = JSON.parse(localStorage.getItem('profile'));
-
 export async function getProfile(name) {
   if (!name) {
     name = getName();

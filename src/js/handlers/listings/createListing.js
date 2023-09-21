@@ -13,8 +13,6 @@ export function setCreateListingFormListener() {
       const listing = Object.fromEntries(formData.entries());
 
       listing.tags = listing.tags.split(',');
-
-      // Format endsAt to ISO date string
       listing.endsAt = new Date(listing.endsAt).toISOString();
 
       const mediaArray = Array.from(formData.getAll('media[]'));
@@ -34,7 +32,10 @@ export function setCreateListingFormListener() {
       }
 
       try {
+        console.log('Creating listing...');
         await createListing(listing);
+        console.log('Listing created successfully.');
+        displayMessage('success', 'Your item was listed', '#message');
       } catch (error) {
         displayMessage('danger', error, '#message');
       }
