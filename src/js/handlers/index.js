@@ -3,6 +3,7 @@ export * from './auth/login.js';
 export * from './auth/logout.js';
 export * from './auth/register.js';
 export * from './listings/createListing.js';
+export * from './listings/createBid.js';
 // export * from "./posts/updatePost.js";
 // export * from "./posts/deletePost.js";
 export * from './listings/displayListings.js';
@@ -10,3 +11,4 @@ export * from './listings/displayListings.js';
 
 export * from './profile/updateProfile.js';
 export * from './profile/getProfile.js';
+export * from '../helpers/auth.js';
