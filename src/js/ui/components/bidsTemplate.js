@@ -19,7 +19,3 @@ export default function displayBids(bids) {
     bidsContainer.appendChild(bidElement);
   });
 }
-//   <div class="row">
-//   <p class="col" id="bidderName">noname</p>
-//   <p class="col" id="bidAmount">Amount: 25</p>
-// </div>

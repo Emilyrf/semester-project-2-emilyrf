@@ -1,12 +1,11 @@
 import { createBid } from '../../api/listings/index.js';
 import displayMessage from '../../ui/components/displayMessage.js';
 
-//Create bid
 export function setCreateBidListener() {
-  const form = document.getElementById('createBid');
+  const createBidForm = document.getElementById('createBid');
 
-  if (form) {
-    form.addEventListener('submit', async (event) => {
+  if (createBidForm) {
+    createBidForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const form = event.target;
       const formData = new FormData(form);
@@ -14,10 +13,18 @@ export function setCreateBidListener() {
       bid.amount = parseInt(bid.amount);
 
       try {
+        // Removed the 'const response =' part
         await createBid(bid);
-        window.location.reload();
+
+        // Check if the request was successful
+        displayMessage(
+          'success',
+          'Your bid was received! Click to refresh.',
+          '#message',
+          true,
+        );
       } catch (error) {
-        displayMessage('danger', error, '#message');
+        displayMessage('danger', error.message, '#message');
       }
     });
   }

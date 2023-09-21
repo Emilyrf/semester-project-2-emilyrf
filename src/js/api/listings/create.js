@@ -48,38 +48,30 @@ export async function createListing(listingData) {
   }
 }
 
-//Function to create a bid
+//Function to create a new listing
 export async function createBid(bid) {
-  try {
-    const queryString = document.location.search;
-    const params = new URLSearchParams(queryString);
-    let id = params.get('id');
+  const queryString = document.location.search;
+  const params = new URLSearchParams(queryString);
+  let id = params.get('id');
 
-    // Construct the URL for creating a bid
-    const createBidUrl = `${API_AUCTION_URL}${action}/${id}/bids`;
-    if (!id) {
-      throw new Error('Bid requires a listing id');
-    }
+  const createBidUrl = `${API_AUCTION_URL}${action}/${id}/bids`;
+  if (!id) {
+    throw new Error('Bid requires a listing id');
+  }
 
-    const response = await authFetch(createBidUrl, {
-      method,
-      headers: {
-        'Content-Type': 'application/json', // Set the content type for JSON
-      },
-      body: JSON.stringify(bid),
-    });
+  const response = await authFetch(createBidUrl, {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(bid),
+  });
 
-    if (response.ok) {
-      return await response.json();
-    } else {
-      // Handle the error response
-      // const errorData = await response.json();
-      // throw new Error(errorData.message || "Failed to create bid");
-      const errorResponse = await response.json();
-      const errorMessage = errorResponse.errors[0].message;
-      throw new Error(errorMessage);
-    }
-  } catch (error) {
-    displayMessage('danger', error, '#message');
+  if (response.ok) {
+    return await response.json();
+  } else {
+    const errorResponse = await response.json();
+    const errorMessage = errorResponse.errors[0].message;
+    throw new Error(errorMessage);
   }
 }
