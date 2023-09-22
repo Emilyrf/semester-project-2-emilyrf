@@ -1,11 +1,21 @@
-// import { getProfile } from "../../api/profile/index.js";
-// import { load } from "../../storage/index.js";
+import { getProfile } from '../../api/profile/index.js';
+import { load } from '../../helpers/storage.js';
 
-// export async function displayProfileListener() { const profile = await getProfile();
+export async function displayProfileListener() {
+  const profile = await getProfile();
+  const { name } = load('profile');
+  const user = await getProfile(name);
 
-//     document.querySelector(".profile-picture").src = profile.avatar;
-//     document.querySelector(".profile-name").textContent = profile.name;
-//     document.querySelector(".followers").innerText = profile._count.followers + ` Followers`;
-//     document.querySelector(".following").textContent = profile._count.following + ` Following`;
+  document.querySelector('.profile-picture').src = profile.avatar;
+  document.querySelector('.profile-name').textContent = profile.name;
+  document.querySelector('.profile-credits').innerText += profile.credits;
+  document.querySelector('.profile-email').textContent += profile.email;
 
-// }
+  const profileAvatar = document.querySelector('#profileAvatar');
+
+  if (!profile.avatar) {
+    profileAvatar.src = '/images/user-icon-image-placeholder.jpg';
+  } else {
+    profileAvatar.src = user.avatar;
+  }
+}

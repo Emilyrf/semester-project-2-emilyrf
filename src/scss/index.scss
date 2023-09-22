@@ -1,11 +1,10 @@
-@import "variables";
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../scss/components/navbar";
-@import "../scss/components/buttons";
-@import "../scss/components/profile";
-@import "../scss/components/banner";
-@import "../scss/components/typography";
-@import "../scss/components/layout";
-@import "../scss/components/cards";
-
-
+@import 'variables';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../scss/components/navbar';
+@import '../scss/components/buttons';
+@import '../scss/components/profile';
+@import '../scss/components/banner';
+@import '../scss/components/typography';
+@import '../scss/components/layout';
+@import '../scss/components/search';
+@import '../scss/components/listings';

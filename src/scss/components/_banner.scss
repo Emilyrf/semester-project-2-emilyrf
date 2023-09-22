@@ -1,13 +1,7 @@
+.welcomeUser {
+  margin-top: 85px;
 
-
-.carousel-image-one {
-    object-fit: cover;
-    object-position: 0 80%;
-    height: 400px;
+  #loggedUserName {
+    color: $tertiary-color;
+  }
 }
-
-.carousel-image-two {
-    object-fit: cover;
-    height: 400px;
-}
-
