@@ -100,7 +100,7 @@ export async function displayMyListings() {
       <div class="card-body">
         <h5 class="card-title">${item.title}</h5>
         <p class="card-text">${item.description}</p>
-        <a href="/listing/?id=${item.id}" class="btn btn-primary">Bid Now</a>
+        <a href="/listing/?id=${item.id}" class="btn btn-primary">View</a>
       </div>`;
       dataList.appendChild(listItem);
     });
