@@ -12,21 +12,10 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-light fixed-top p-2 text-center">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top p-3 text-center">
         <a class="navbar-brand" href="/">
           <img height="50" src="images/logob.png" alt="BidBud logo" />
         </a>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            id="search"
-            list="searchResults"
-          />
-          <div id="searchResults" class="search-results"></div>
-        </form>
         <button
           class="navbar-toggler"
           type="button"
@@ -47,10 +36,13 @@
       </nav>
     </header>
 
-    <main class="mt-5">
-      <div class="container py-5" id="welcomeUser">
-        Hello <span id="loggedUserName"></span>!
+    <main>
+      <div class="container py-5 welcomeUser" id="welcomeUser">
+        <h1 class="display-5 fw-bold heading-1">
+          Hello <span id="loggedUserName"></span>!
+        </h1>
       </div>
+
       <div class="container col-xxl-8 px-4 py-5" id="hero">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
@@ -116,12 +108,26 @@
       </section>
     </main>
 
-    <footer class="bg-secondary p-3">
-      <p class="text-light m-0 text-center">
-        contato:<a class="text-light" href="mailto:email@frutafruto.com.br">
-          email@frutafruto.com.br</a
-        >
-      </p>
+    <footer class="bg-dark text-center text-lg-start text-light">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <h5 class="text-uppercase">BID BUD</h5>
+
+            <p>
+              This is the Semester Project 2 for the Frontend course at Noroff.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <h5 class="text-uppercase">Find me at:</h5>
+            <a href="">LinkedIn</a>
+            <a href="">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Emily Ferreira
+      </div>
     </footer>
 
     <script
