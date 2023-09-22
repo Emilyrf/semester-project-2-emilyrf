@@ -45,11 +45,34 @@ When a user joins the website, they are given 1000 credits to use on the site. T
 
 - [Noroff API](https://docs.noroff.dev)
 
-## Deployed with Github Pages :globe_with_meridians:
+## Deployed with Netlify :globe_with_meridians:
 
-link
+[link](https://loquacious-yeot-03cf33.netlify.app)
+
 
 ## Getting Started :hammer_and_wrench:
+
+### Installing , Running and Testing
+
+1. Clone the repo:
+```bash
+gh repo clone Emilyrf/semester-project-2-emilyrf
+```
+
+2. Install the dependencies:
+```bash
+npm i
+```
+
+3. Build:
+```bash
+npm run build
+```
+
+4. Run the app:
+```bash
+npm run start
+```
 
 
 
