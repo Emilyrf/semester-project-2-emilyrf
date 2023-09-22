@@ -71,7 +71,7 @@ npm run build
 
 4. Run the app:
 ```bash
-npm run start
+npm run watch
 ```
 
 
