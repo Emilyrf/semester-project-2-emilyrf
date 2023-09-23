@@ -10,5 +10,10 @@ export async function getProfile(name) {
   }
   const getProfileUrl = `${API_AUCTION_URL}${action}/${name}`;
   const response = await authFetch(getProfileUrl);
-  return await response.json();
+  if (response.ok) {
+    return await response.json();
+  } else {
+    const json = await response.json();
+    throw new Error(json.errors[0].message);
+  }
 }
