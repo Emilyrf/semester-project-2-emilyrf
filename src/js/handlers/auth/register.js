@@ -15,6 +15,7 @@ export function setRegisterFormListener() {
             try {
                 await  register(profile)
                 displayMessage("success", 'You are now registered!', "#message", true, true);
+                registerForm.reset();
 			} catch (error) {
 				displayMessage("danger", error, "#message");
 			}
