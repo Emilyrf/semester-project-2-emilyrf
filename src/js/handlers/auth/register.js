@@ -14,7 +14,8 @@ export function setRegisterFormListener() {
            
             try {
                 await  register(profile)
-                displayMessage("success", 'You are now registered! <a href="/profile/login/" class="text-primary fw-bold">Log in</a> ', "#message");
+                displayMessage("success", 'You are now registered!', "#message", true, true);
+                registerForm.reset();
 			} catch (error) {
 				displayMessage("danger", error, "#message");
 			}

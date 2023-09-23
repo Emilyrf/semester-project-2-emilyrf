@@ -3,6 +3,7 @@ export default function displayMessage(
   message,
   target,
   showRefreshLink = false,
+  showLoginLink = false,
 ) {
   const container = document.querySelector(target);
 
@@ -15,11 +16,25 @@ export default function displayMessage(
     `;
 
     const refreshLink = messageElement.querySelector('#refreshLink');
+
     if (refreshLink) {
       refreshLink.addEventListener('click', (event) => {
         event.preventDefault();
         location.reload();
       });
+    }
+    if (showLoginLink) {
+      messageElement.innerHTML = `
+      ${message} <a href="/profile/login/" id="#loginLink">Log in</a> 
+    `;
+    const loginLink = messageElement.querySelector('#loginLink');
+    
+    if (loginLink) {
+      loginLink.addEventListener('click', (event) => {
+        event.preventDefault();
+      });
+    }
+
     }
   } else {
     messageElement.textContent = message;

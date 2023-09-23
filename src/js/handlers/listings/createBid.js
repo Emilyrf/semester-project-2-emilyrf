@@ -19,7 +19,7 @@ export function setCreateBidListener() {
           'success',
           'Your bid was received! Click to refresh.',
           '#message',
-          true,
+          true, false,
         );
       } catch (error) {
         displayMessage('danger', error.message, '#message');
